@@ -207,7 +207,7 @@ int main(void) {
 	while ((next_point = findNextPoint(mat)) != -1) {
 		printf("%d ", next_point + 1);
 	}
-	puts("");
+	puts("");	// 换个行
 	
 	free2dArray(mat);
 	
