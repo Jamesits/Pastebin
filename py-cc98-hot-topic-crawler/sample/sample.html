@@ -1,0 +1,178 @@
+
+<html>
+<head>
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="alternate" type="application/rss+xml" title="察看新帖" href="boardrss.asp" />
+	<link rel="alternate" type="application/rss+xml" title="热门话题" href="rss.asp" />
+	
+	<title>24小时热门话题 &raquo; CC98论坛</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="inc/style.css" type="text/css">
+	<script type="text/javascript">
+		var currentUserID = 515715;
+		var currentBoardID = 0;
+		var bannerPath = 'banner/';
+		
+var bannerInfo = {"t":[{"p":"32017181443.gif","i":"736"},{"p":"3201851411.gif","i":"737"},{"p":"3262235846.gif","i":"738"}],"b":[]};
+
+	</script>
+	<script type="text/javascript" src="/js/md5.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/ccdialog.js"></script>
+	<script type="text/javascript" src="js/boardquery.js"></script>
+</head>
+
+<body  topmargin=0 leftmargin=0>
+
+	
+	<!-- 菜单 div -->
+	<div id="menuDiv" style='z-index: 2; display: none; width: 1px; position: absolute; height: 1px; background-color: #9cc5f8'></div>
+
+	<!-- 头部table -->
+	<table cellspacing="0" cellpadding="0" align="center" style="border: 1px #6595D6 solid; border-top-width: 0px; border-right-width: 1px; border-bottom-width: 0px; border-left-width: 1px; width: 97%;">
+		<tr>
+			<td width="100%">
+
+				<!-- 真正的开始表格 外面那个是用来限制的 -->
+				<table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+					<!-- ==============第一行横杠====================== -->
+					<tr>
+						<td class="TopDarkNav" height="9"></td>
+					</tr>
+					<!-- ==============logo和帮助====================== -->
+					<tr>
+						<td height="70" class="TopLighNav2">
+							<table border="0" width="100%" align="center">
+								<tr>
+									<!-- 小logo -->
+									<td align="left" width="25%">
+										<a href="http://www.cc98.org">
+											<img border="0" src="images/logo/logo.gif"></a>
+									</td>
+									<!-- 大logo -->
+									<td align="center" width="65%">
+										<div class="advImg" id="advImg"><a id="advLink" href="#" target="_blank"></a></div>
+										<script language="javascript">
+											showadvs(1);
+										</script>
+									</td>
+									<!-- 帮助 -->
+									<td align="right" style="line-height: 15pt" width="10%">
+										<a href="#"><span style="cursor: hand" onclick="window.external.AddFavorite('http://www.cc98.org', 'www.cc98.org')">加入收藏</span></a><br>
+										<a href="#"><span style="cursor: pointer" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.cc98.org');">设为首页</span></a><br>
+										<a href="#"><span style="cursor: pointer" class="boardQueryLink" id="boardQueryLink">搜索版面</span></a><br>
+										<!--<a href="boardhelp.asp">论坛帮助</a>-->
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- ==============第二行横杠====================== -->
+					<tr>
+						<td class="TopLighNav" height="9"></td>
+					</tr>
+					<!-- ============== 菜单 ====================== -->
+					<tr>
+						<td class="TopLighNav1" height="22" valign="top">
+							<div style="position: relative; margin-top: 2px">
+								<div style="position: absolute; width: 960px; top: 0px;">
+									&nbsp;&nbsp;
+		
+									<b>hazelhik</b>&nbsp;&nbsp;
+			<a href="#" onmouseout='DelayHideMenu();' onmouseover='ShowMenu(this,logon,100);'>账号选项</a>
+									<img src="pic/navspacer.gif" align="absmiddle">
+									<a href="usermanager.asp" onmouseout='DelayHideMenu();' onmouseover='ShowMenu(this,manage2,100);'>控制面板</a>
+									
+									<!--<img src=pic/navspacer.gif align=absmiddle>
+		<a href="guidboard.asp" onmouseout='DelayHideMenu()' onMouseOver='ShowMenu(this,hotboard,100)'>热门版面</a>-->
+
+									<img src="pic/navspacer.gif" align="absmiddle">
+									<a href="query.asp?boardid=0" onmouseout='DelayHideMenu();' onmouseover='ShowMenu(this,Search,100);'>论坛搜索</a>
+									<img src="pic/navspacer.gif" align="absmiddle">
+									<!--<a href="#" onmouseout='DelayHideMenu()' onMouseOver='ShowMenu(this,stylelist,100)'>自选风格</a>
+		<img src=pic/navspacer.gif align=absmiddle>-->
+									<a href="boardstat.asp?boardid=0" onmouseout='DelayHideMenu();' onmouseover='ShowMenu(this,boardstat,100);'>论坛状态</a>
+									<!--
+		<img src=pic/navspacer.gif align=absmiddle>
+		<a href="show.asp?boardid=0" onmouseout='DelayHideMenu()' onMouseOver='ShowMenu(this,downlist,100)'>论坛展区</a>
+		-->
+									<!--<img src=pic/navspacer.gif align=absmiddle>
+		<a href="http://10.71.45.100/newblog" onmouseout='DelayHideMenu()' onMouseOver='ShowMenu(this,blog,100)' target="_blank">98blog</a>
+		<img src=pic/navspacer.gif align=absmiddle>
+		<a href="music.asp" onmouseout='DelayHideMenu()' onMouseOver='ShowMenu(this,music,100)'>点歌</a>-->
+									<img src="pic/navspacer.gif" align="absmiddle">
+									<a onmouseout='DelayHideMenu();this.style.cursor="auto";' onmouseover='ShowMenu(this,addon,100);this.style.cursor="pointer";' target="_blank">论坛附件</a>
+									<img src="pic/navspacer.gif" align="absmiddle">
+									<a href="boardhelp.asp" onmouseout='DelayHideMenu();' onmouseover='ShowMenu(this,help,100);'>论坛帮助</a>
+									
+									<img src="pic/navspacer.gif" align="absmiddle">
+									<a href="http://www.cc98.org/dispbbs.asp?BoardID=326&id=4019715" title="BUG 反馈">BUG 反馈</a>
+									<img src="pic/navspacer.gif" align="absmiddle" />
+									<a href="javascript:;" onclick="changeSimple(1)">Simple版</a>
+									<!--
+		<img src="pic/navspacer.gif" align="absmiddle">
+		<a href="http://bbs.cc98.org/" title="Alpha 就是比 Beta 更烂的...">2.0 Alpha</a>
+-->
+									
+								</div>
+								<div id="multiLogin"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<!-- 最外层 -->
+			</td>
+		</tr>
+	</table>
+	
+	<table cellspacing="1" cellpadding="3" align="center" border="0" width="97%">
+		<tr>
+			
+			<td width="65%"></td>
+			<td width="35%" align="right">
+				
+				<img src="pic/msg_no_new_bar.gif">
+				<a href="usersms.asp?action=inbox">我的收件箱</a> (<span style="color: gray;">0 新</span>)
+		
+			</td>
+		</tr>
+	</table>
+	
+	<table cellspacing="1" cellpadding="3" align="center" class="tableBorder2">
+		<tr>
+			<td height="25" valign="middle">
+				
+				<img src="pic/Forum_nav.gif" align="absmiddle">
+				
+				<a href="index.asp">www.cc98.org</a> → 
+				24小时热门话题
+				<a name="top"></a>
+			</td>
+		</tr>
+	</table>
+	<br>
+	
+<table cellspacing="1" cellpadding="0" align="center" class="tableBorder1 hot-topic-table">
+	<tr>
+		<th height="25" width="10%" align="center">排名</th>
+		<th height="25" width="60%" align="center">话题</th>
+		<th height="25" width="10%" align="center">关注人数</th>
+		<th height="25" width="10%" align="center">回帖</th>
+		<th height="25" width="10%" align="center">点击</th>
+	</tr>
+	<TR><TD align=middle class=tablebody1>1</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=182&id=4498352" target="_blank"><font color=#000066>还是我来告诉大家一个真理吧，在大学能否找到女朋友只有一个关键因素</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=182" target="_blank">心灵之约</a></td><td height=20 width=30% class=tablebody2>作者：匿名</td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/29 18:55:00">21 小时 26 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>118</td><TD align=middle class=tablebody1>129</td><TD align=middle class=tablebody1>10421</td></tr><TR><TD align=middle class=tablebody1>2</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=152&id=4498319" target="_blank"><font color=#000066>在春暖花开的日子帮闺蜜找个靠谱男友（更新王道以及十大第一附楼主王道！）</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=152" target="_blank">缘分天空</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=skyfish111" target="_blank">skyfish111</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/29 17:18:00">23 小时 3 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>79</td><TD align=middle class=tablebody1>87</td><TD align=middle class=tablebody1>13155</td></tr><TR><TD align=middle class=tablebody1>3</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=100&id=4498517" target="_blank"><font color=#000066>关于衙门大门的一点想法</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=100" target="_blank">校园信息</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=pandasum" target="_blank">pandasum</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/30 1:26:00">14 小时 55 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>72</td><TD align=middle class=tablebody1>114</td><TD align=middle class=tablebody1>5302</td></tr><TR><TD align=middle class=tablebody1>4</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=144&id=4498702" target="_blank"><font color=#000066>觉得是时候来晒一发儿子了，就在这里吧</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=144" target="_blank">一路走来</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=july" target="_blank">july</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/30 13:54:00">2 小时 26 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>64</td><TD align=middle class=tablebody1>64</td><TD align=middle class=tablebody1>2155</td></tr><TR><TD align=middle class=tablebody1>5</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=158&id=4498647" target="_blank"><font color=#000066>【纳新】浙里有你，EE生辉——电气工程学院团委纳新火热进行中！</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=158" target="_blank">E电园</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=eetw" target="_blank">eetw</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/30 12:20:00">4 小时 0 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>60</td><TD align=middle class=tablebody1>68</td><TD align=middle class=tablebody1>346</td></tr><TR><TD align=middle class=tablebody1>6</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=80&id=4498365" target="_blank"><font color=#000066>[问][yq]求推荐一只男士手表</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=80" target="_blank">生活点滴</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=%E8%93%9D%E6%9E%AB%E5%8F%B6" target="_blank">蓝枫叶</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/29 19:18:00">21 小时 2 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>53</td><TD align=middle class=tablebody1>59</td><TD align=middle class=tablebody1>4551</td></tr><TR><TD align=middle class=tablebody1>7</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=562&id=4498449" target="_blank"><font color=#000066>[出][游戏机]XBOX ONE</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=562" target="_blank">电脑数码</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=%E4%B8%80%E5%8F%AA%E5%B0%8F%E5%8A%A8" target="_blank">一只小动</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/29 21:56:00">18 小时 24 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>26</td><TD align=middle class=tablebody1>25</td><TD align=middle class=tablebody1>1656</td></tr><TR><TD align=middle class=tablebody1>8</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=81&id=4498440" target="_blank"><font color=#000066>如何自然地发展一段实验室恋情？</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=81" target="_blank">情感空气</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=%E6%A0%BE%E6%A0%91" target="_blank">栾树</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/29 21:41:00">18 小时 40 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>24</td><TD align=middle class=tablebody1>23</td><TD align=middle class=tablebody1>732</td></tr><TR><TD align=middle class=tablebody1>9</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=15&id=4498395" target="_blank"><font color=#000066>【浙超联赛】2014-2015赛季浙超联赛第六轮第二比赛日战报(周日)</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=15" target="_blank">足球板块</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=%E8%B6%B3%E7%90%83%E5%8D%8F%E4%BC%9A" target="_blank">足球协会</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/29 20:16:00">20 小时 4 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>20</td><TD align=middle class=tablebody1>27</td><TD align=middle class=tablebody1>1276</td></tr><TR><TD align=middle class=tablebody1>10</td><TD align=middle class=tablebody1><table cellspacing=0 cellpadding=0 width=100% align=center><tr><td height=24 colspan=3>&nbsp;<a href="dispbbs.asp?boardid=135&id=4498641" target="_blank"><font color=#000066>论如何李菊福地反驳小崔</font></a></td></tr><tr><td height=20 width=40% class=tablebody2>&nbsp;版面：<a href="list.asp?boardid=135" target="_blank">开怀一笑</a></td><td height=20 width=30% class=tablebody2>作者：<a href="dispuser.asp?name=lockross" target="_blank">lockross</a></td><td height=20 width=30% class=tablebody2 align=right><span title="2015/3/30 12:12:00">4 小时 9 分 之前</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table></td><TD align=middle class=tablebody1>15</td><TD align=middle class=tablebody1>14</td><TD align=middle class=tablebody1>553</td></tr><!--data update @ 2015/3/30 16:21:00-->
+</table>
+<br />
+<br />
+
+	<div id="copyright">Copyright &copy; 2003-2014 CC98 Network Association. Email: contact@cc98.org</div>
+	
+</body>
+</html>
+
+<!--end:46.875毫秒-->
