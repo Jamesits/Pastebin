@@ -30,6 +30,7 @@
 // 一个简单的二维数组实现
 
 #define ARRAY_ELEMENT_TYPE int
+#define ARRAY_FORMAT_STRING "%d"
 #define ARRAY_ELEMENT_DEFAULT_VALUE 0
 
 // 二维数组结构体
@@ -118,6 +119,15 @@ void fill2dArray(s2dArray *arr, ARRAY_ELEMENT_TYPE value) {
 			setValueOf2dArray(arr, i, j, value);
 }
 
+// 输出数组内容（调试功能）
+void print2dArray(s2dArray *arr) {
+	for(int i = 0; i < arr->dimX; i++) {
+		for (int j = 0; j < arr->dimY; j++)
+			printf(ARRAY_FORMAT_STRING " ", getValueOf2dArray(arr, i, j));
+		puts("");	
+	}
+}
+
 // ===============================================
 // 一维数组相关操作
 
@@ -129,8 +139,8 @@ void *mallocArrayAndFillZero(size_t size) {
 }
 
 // 求数组元素和
-ARRAY_ELEMENT_TYPE sumOfArray(ARRAY_ELEMENT_TYPE *arr, int length) {
-	ARRAY_ELEMENT_TYPE sum = 0;
+int sumOfArray(int *arr, int length) {
+	int sum = 0;
 	for (int i = 0; i < length; i++) sum += arr[i];
 	return sum;
 }
@@ -165,19 +175,40 @@ void fillZeroInColumn(s2dArray *arr, int col) {
 // ===============================================
 // 有向图相关操作
 
+// 删掉对角线的值
+bool fixLoop(s2dArray *mat) {
+	int n = mat->dimX;
+	bool hasDetected = false;
+	for (int i = 0; i < n; i++) {
+		if (getValueOf2dArray(mat, i, i) == 1) {
+			hasDetected = true;
+			setValueOf2dArray(mat, i, i, 0);
+		}
+	}
+	return hasDetected;
+}
+
 // 找到下一个需要输出的顶点并返回其序号；找不到下一个时返回 -1
 int findNextPoint(s2dArray *mat) {
 	int n = mat->dimX;
 	static bool *hasFound = NULL;
 	if (hasFound == NULL) hasFound = mallocArrayAndFillZero(n * sizeof(bool));
 	int scanptr = 0;
-	while (scanptr < n && hasFound[scanptr] && !getInDegree(mat, scanptr)) scanptr++;
+	while (scanptr < n && (hasFound[scanptr] || getInDegree(mat, scanptr))) scanptr++;
 	if (scanptr < n) {
 		// 找到新的点
 		hasFound[scanptr] = true;			// 删除该顶点
 		fillZeroInColumn(mat, scanptr);		// 删除以该顶点为尾的弧
 		return scanptr;
 	} else {
+		/*
+		for (int i = 0; i < n; i++) 
+			if (!hasFound[i]) {
+				// 如果还有节点没输出，则输出它们
+				hasFound[i] = true;
+				return i;
+			}
+		*/
 		// 所有点都已经输出，查找结束
 		free(hasFound);
 		hasFound = NULL;
@@ -199,8 +230,9 @@ int main(void) {
 	for (int i = 0; i < n*n; i++) {
 		int next_input;
 		scanf("%d", &next_input);
-		setValueOf2dArray(mat, i/n, i%n, next_input);
+		setValueOf2dArray(mat, i/n, i%n, !!next_input);		// 强制转换输入值到 0 或 1 了
 	}
+	if (fixLoop(mat)) puts("Warning: Loop(s) have been ignored.");
 	
 	int next_point;
 	printf("\nSequence: ");
