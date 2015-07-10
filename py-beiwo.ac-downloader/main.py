@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# cc98 hot topic crawler
-# Copyright (C) 2015 James Swineson
+# beiwo.ac downloader
+# by James Swineson
+# https://github.com/Jamesits/Pastebin/blob/master/py-beiwo.ac-downloader/main.py
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -57,48 +58,9 @@ def downloadFile(url, file_name):
     f.close()
     print ""
 
-def crawl(url):
-    """
-    Get data from server
-
-    :return: HTML context in string
-    """
-    user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36'
-    cookie = ''
-    connection = 'keep-alive'
-    cache_control = 'max-age=0'
-    accept_encoding = ''
-    accept_language = 'zh-CN,zh;q=0.8,zh-TW;q=0.6,en-US;q=0.4,en-GB;q=0.2'
-    accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-
-    headers = {
-        'Connection': connection,
-        'Cache-Control': cache_control,
-        'accept': accept,
-        'User-Agent': user_agent,
-        'Accept-Encoding': accept_encoding,
-        'Accept-Language': accept_language,
-        'Cookie': cookie
-    }
-
-    request = urllib2.Request(url=url, headers=headers)
-    try:
-        result = urllib2.urlopen(request, timeout=30)
-    except httplib.error:
-        return ""
-
-    raw_data = result.read()
-    page_html = raw_data.decode('utf8')
-    return page_html
-
 def extractID(url):
     pattern = r'id=([0123456789abcdef]+)'
     result = re.findall(pattern, url)
-    return result[0]
-
-def getPicture(data):
-    pattern = r'<img style="width: 500px;height: 500px;" src="(.*)">'
-    result = re.findall(pattern, data)
     return result[0]
 
 def getInf(id):
@@ -131,21 +93,6 @@ def getInf(id):
     raw_data = result.read()
     page_html = raw_data.decode('utf-8')
     return page_html
-
-def getTitle(data):
-    pattern = r'<a class="textAbridge" title="(.*)" style="display: block;width:100%;color:#3e3e3e;">'
-    result = re.findall(pattern, data)
-    return result[0]
-
-def getAuthor(data):
-    pattern = r'<a class="textAbridge" title="(.*)" style="font-size:13px;display: block;width:160px;color:#656565;">'
-    result = re.findall(pattern, data)
-    return result[0]
-
-def getDescription(data):
-    pattern = r'<div class="myTable" id="lyricsId" style="display: none;margin-top: 0px;"><pre style="font-size: 12px;color: #797979;line-height: 18px;">(.*)</pre></div>'
-    result = re.findall(pattern, data)
-    return result[0]
 
 def download(id, path):
     print "Music ID: ", id
