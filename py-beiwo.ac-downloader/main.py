@@ -151,7 +151,7 @@ def download(id, path):
     print "Music ID: ", id
     print "Downloading metadata..."
     data = json.loads(getInf(id))
-    print "Title: ", data[u'items'][0][u'title]
+    print "Title: ", data[u'items'][0][u'title']
     with open(str(path) + "metadata.txt", "w") as metadata:
         metadata.write("ID: %s\nMetadata: \n" % id)
         datastring = MyPrettyPrinter().pformat(data)
